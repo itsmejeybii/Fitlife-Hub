@@ -1,80 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PeakFit Gym</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLife Hub</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 
-<body>
+<body class="bg-gray-900 text-white">
+  <div id="root"></div>
 
-<nav>
-    <h1>PeakFit</h1>
-    <div>
-        <a href="#">Home</a>
-        <a href="#programs">Programs</a>
-        <a href="#booking">Book</a>
-        <a href="#dashboard">Dashboard</a>
-    </div>
-</nav>
-
-<div class="hero">
-    <h1>STRONGER THAN <span>YESTERDAY</span></h1>
-    <p>Train smarter. Track progress. Book classes.</p>
-</div>
-
-<div class="container" id="programs">
-    <h2>Programs</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Strength</h3>
-            <button onclick="selectProgram('Strength')">Select</button>
-        </div>
-        <div class="card">
-            <h3>Cardio</h3>
-            <button onclick="selectProgram('Cardio')">Select</button>
-        </div>
-        <div class="card">
-            <h3>Yoga</h3>
-            <button onclick="selectProgram('Yoga')">Select</button>
-        </div>
-    </div>
-</div>
-
-<div class="booking" id="booking">
-    <h2>Book a Class</h2>
-    <p id="selectedProgram">No program selected</p>
-
-    <label for="time">Class Time:</label><br>
-<select id="time">
-    <option>7:00 AM</option>
-    <option>10:00 AM</option>
-    <option>5:00 PM</option>
-</select>
-
-    <br>
-    <button onclick="bookClass()">Book Now</button>
-</div>
-
-<div class="dashboard" id="dashboard">
-    <h2>Member Dashboard</h2>
-
-    <div class="stats">
-        <div class="stat">
-            <h3 id="workouts">0</h3>
-            <p>Workouts</p>
-        </div>
-        <div class="stat">
-            <h3 id="calories">0</h3>
-            <p>Calories</p>
-        </div>
-    </div>
-
-    <button onclick="addWorkout()">Log Workout</button>
-</div>
-
-<script src="script.js"></script>
-
+  <!-- JS -->
+  <script type="text/babel" src="app.js"></script>
 </body>
 </html>
