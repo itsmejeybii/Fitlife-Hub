@@ -1,47 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>FitLife Hub</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <div class="grid grid-cols-4 gap-4 mb-6">
-  <div class="bg-gray-800 p-4 rounded-xl">
-    <h3>Calories</h3>
-    <p class="text-2xl font-bold">1250</p>
-  </div>
 
-  <div class="bg-gray-800 p-4 rounded-xl">
-    <h3>Workouts</h3>
-    <p class="text-2xl font-bold">3</p>
-  </div>
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-  <div class="bg-gray-800 p-4 rounded-xl">
-    <h3>BMI</h3>
-    <p class="text-2xl font-bold">22.4</p>
-  </div>
-
-  <div class="bg-gray-800 p-4 rounded-xl">
-    <h3>Weight</h3>
-    <p class="text-2xl font-bold">68kg</p>
-  </div>
-</div>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- React -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-gray-900 text-white">
-  <div id="root"></div>
+<body>
 
-  <!-- JS -->
-  <script type="text/babel" src="app.js"></script>
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h1>FitLife Hub</h1>
+
+    <ul>
+      <li class="active"><i data-lucide="home"></i> Dashboard</li>
+      <li><i data-lucide="flame"></i> Calories</li>
+      <li><i data-lucide="dumbbell"></i> Workouts</li>
+      <li><i data-lucide="calculator"></i> BMI</li>
+      <li><i data-lucide="bar-chart-2"></i> Progress</li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <h1 class="title">Dashboard</h1>
+
+    <!-- Top Cards -->
+    <div class="cards">
+
+      <div class="card">
+        <p>Daily Calories</p>
+        <h2>1250 / 2000</h2>
+        <div class="progress"><div style="width:62%"></div></div>
+      </div>
+
+      <div class="card">
+        <p>Workouts</p>
+        <h2>3 Sessions</h2>
+        <div class="progress blue"><div style="width:75%"></div></div>
+      </div>
+
+      <div class="card">
+        <p>BMI</p>
+        <h2 id="bmiValue">22.4</h2>
+        <span class="status good">Normal</span>
+      </div>
+
+      <div class="card">
+        <p>Weight</p>
+        <h2>68.5 kg</h2>
+        <span class="status">-1.2 kg</span>
+      </div>
+
+    </div>
+
+    <!-- Main Sections -->
+    <div class="grid">
+
+      <!-- Calories -->
+      <div class="box">
+        <h3>Calorie Tracker</h3>
+        <ul id="foodList">
+          <li>Chicken - 350 kcal</li>
+          <li>Rice - 250 kcal</li>
+          <li>Protein Shake - 180 kcal</li>
+        </ul>
+
+        <button onclick="addFood()">+ Add Food</button>
+      </div>
+
+      <!-- Workout -->
+      <div class="box">
+        <h3>Workout Planner</h3>
+        <ul>
+          <li>Push Ups (3x15)</li>
+          <li>Squats (3x20)</li>
+          <li>Plank (60s)</li>
+        </ul>
+
+        <button>+ Add Workout</button>
+      </div>
+
+      <!-- BMI -->
+      <div class="box">
+        <h3>BMI Calculator</h3>
+
+        <input id="weight" type="number" placeholder="Weight (kg)">
+        <input id="height" type="number" placeholder="Height (cm)">
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <p id="bmiResult"></p>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+
 </body>
 </html>
